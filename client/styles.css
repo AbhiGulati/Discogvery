@@ -16,4 +16,10 @@ button {
 
 img {
   object-fit: cover;
+  text-align: right;
+}
+
+div[back-img]{
+    width: 100px;
+    height: 100px;
 }

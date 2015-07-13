@@ -1,4 +1,4 @@
-angular.module('music', ['music.services'])
+var app = angular.module('music', ['music.services'])
 
 .controller('search', function ($scope, APICalls) {
   $scope.similarArtists = {left:[], right:[]};
@@ -14,8 +14,7 @@ angular.module('music', ['music.services'])
       APICalls.getSimilar(artist)
       .then(function (result) {
         $scope.similarArtists[side] = result.data.similarartists.artist;
-        $scope.displayArtists = $scope.similarArtists[side].slice(0,20);
-        debugger;
+        $scope.displayArtists[side] = $scope.similarArtists[side].slice(0,20);
         //console.log(JSON.stringify(result.data.similarartists.artist));
       });
     } else {
@@ -27,4 +26,15 @@ angular.module('music', ['music.services'])
     $scope.getSimilar($scope.artist1, 'left');
     $scope.getSimilar($scope.artist2, 'right');
   }
+});
+
+app.directive('backImg', function(){
+    return function(scope, element, attrs){
+        attrs.$observe('backImg', function(value) {
+            element.css({
+                'background-image': 'url(' + value +')',
+                'background-size' : 'cover'
+            });
+        });
+    };
 });

@@ -2,7 +2,10 @@
   "name": "discogvery",
   "version": "0.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js"
+  },
   "author": "",
   "dependencies": {
     "express": "^4.4.5"

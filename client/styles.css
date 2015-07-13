@@ -1,0 +1,13 @@
+header {
+  margin:0 auto;
+  max-width: 100%;
+  text-align: center;
+}
+
+#left {
+  float:left;
+}
+
+#right {
+  float:left;
+}

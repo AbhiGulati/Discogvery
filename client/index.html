@@ -4,14 +4,25 @@
   <head>
     <meta charset="utf-8" />
     <title>Getting Started</title>
-    <!-- styles needed -->
+    <link rel="stylesheet" href="./styles.css">
     <div ng-view></div>
   </head>
 
   <body>
+    <header>
+    <h1>Discogvery</h1>
+    </header>
+    
     <div ng-controller="search">
-      <input type='text' ng-model='artist1' placeholder='Pick an Artist!' />
-      <button ng-click="getSimilar(artist1)">Get Similar Artists</button>
+      <div class="side" id="left">
+        <div><input type='text' ng-model='artist1' placeholder='Pick an Artist!' /></div>
+        <button ng-click="getSimilar(artist1)">Get Similar Artists</button>
+      </div>
+      
+      <div class="side" id="right">
+        <div><input type='text' ng-model='artist2' placeholder='Pick an Artist!' /></div>
+        <button ng-click="getSimilar(artist2)">Get Similar Artists</button>
+      </div>
 
       <div class="artist" ng-repeat="artist in similarArtists">
         {{artist.match}} {{artist.name}}

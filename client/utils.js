@@ -24,3 +24,7 @@ angular.module('music.services', [])
     getSimilar : getSimilar
   };
 })
+
+.factory('CompareLists', function($http) {
+  
+})

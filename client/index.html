@@ -26,7 +26,21 @@
           <input type="text" class="form-control" id="artist2" ng-model="artist2" placeholder="The Beatles">
         </div>
       </form>
-      <button>Submit</button>
+      <button ng-click="getSimilarBoth()">Submit</button>
+    
+      <div class="results col-sm-6">
+        <div class="artist" ng-repeat="artist in displayArtists.left">
+          {{artist.match | number:2}} {{artist.name}}
+        </div>
+      </div>
+
+      <div class="results col-sm-6">
+        <div class="artist" ng-repeat="artist in displayArtists.right">
+          {{artist.match | number:2}} {{artist.name}}
+          <img width="100px" height="100px" src={{artist.image[2]['#text']}}>
+        </div>
+      </div>
+
     </div>
     <!--
       <span class="side" id="left">

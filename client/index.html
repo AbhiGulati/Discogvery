@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html ng-app="music">
+  <head>
+    <meta charset="utf-8" />
+    <title>Getting Started</title>
+    <!-- styles needed -->
+    <div ng-view></div>
+  </head>
+
+  <body>
+    <div ng-controller="search">
+      <input type='text' ng-model='artist1' placeholder='Pick an Artist!' />
+      <button ng-click="getSimilar(artist1)">Get Similar Artists</button>
+
+      <div class="artist" ng-repeat="artist in similarArtists">
+        {{artist.match}} {{artist.name}}
+      </div>
+    </div>
+
+    <script src="lib/angular/angular.js"></script>
+    <script src="./app.js"></script>
+    <script src="./utils.js"></script>
+  </body>
+
+</html>

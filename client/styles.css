@@ -4,10 +4,12 @@ header {
   text-align: center;
 }
 
-#left {
-  float:left;
+.search {
+  max-width:80%;
 }
 
-#right {
-  float:left;
+button {
+  margin: 0 auto;
+  max-width: 100%;
+  display: block;
 }

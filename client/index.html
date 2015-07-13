@@ -3,7 +3,8 @@
 <html ng-app="music">
   <head>
     <meta charset="utf-8" />
-    <title>Getting Started</title>
+    <title>Discovery</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="./styles.css">
     <div ng-view></div>
   </head>
@@ -11,23 +12,43 @@
   <body>
     <header>
     <h1>Discogvery</h1>
+    <h2>Discover new music!</h2>
     </header>
-    
-    <div ng-controller="search">
-      <div class="side" id="left">
-        <div><input type='text' ng-model='artist1' placeholder='Pick an Artist!' /></div>
-        <button ng-click="getSimilar(artist1)">Get Similar Artists</button>
-      </div>
-      
-      <div class="side" id="right">
-        <div><input type='text' ng-model='artist2' placeholder='Pick an Artist!' /></div>
-        <button ng-click="getSimilar(artist2)">Get Similar Artists</button>
-      </div>
 
-      <div class="artist" ng-repeat="artist in similarArtists">
-        {{artist.match}} {{artist.name}}
-      </div>
+    <div class="container search" ng-controller="search">
+      <form class="form-inline">
+        <div class="form-group col-sm-6">
+          <label for="artist1">First Artist</label>
+          <input type="text" class="form-control" id="artist1" ng-model="artist1" placeholder="Radiohead">
+        </div>
+        <div class="form-group col-sm-6">
+          <label for="artist2">Second Artist</label>
+          <input type="text" class="form-control" id="artist2" ng-model="artist2" placeholder="The Beatles">
+        </div>
+      </form>
+      <button>Submit</button>
     </div>
+    <!--
+      <span class="side" id="left">
+        <span><input type='text' ng-model='artist1' placeholder='Pick an Artist!' /></span>
+        <button ng-click="getSimilar(artist1,'left')">Get Similar Artists</button>
+        <div class="artist" ng-repeat="artist in similarArtists.left">
+          {{artist.match.toPrecision(3)}} {{artist.name}}
+        </div>
+      </span>
+      
+      <span class="side" id="right">
+        <span><input type='text' ng-model='artist2' placeholder='Pick an Artist!' /></span>
+        <button ng-click="getSimilar(artist2,'right')">Get Similar Artists</button>
+        <div class="artist" ng-repeat="artist in similarArtists.right">
+          {{artist.match.toPrecision(3)}} {{artist.name}}
+        </div>
+      </span>
+
+      <div class="artist" ng-repeat="artist in commonArtists">
+        {{artist.match}} {{artist.name}}
+      </div> -->
+    
 
     <script src="lib/angular/angular.js"></script>
     <script src="./app.js"></script>

@@ -29,17 +29,20 @@
       <button ng-click="getSimilarBoth()">Submit</button>
     
       <div class="results col-sm-6">
-        <div class="artist col-sm-5" ng-repeat="artist in displayArtists.left">
+        <div class="artist col-sm-6" ng-repeat="artist in displayArtists.left">
           <!--{{artist.match | number:2}}-->
-           {{artist.name}}
-          <div width="100px" height="100px" back-img={{artist.image[2]['#text']}}></div>
+          <div class="artist-square" width="100px" height="100px" back-img={{artist.image[2]['#text']}}>
+            <div class="artist-name">{{artist.name}}</div>
+          </div>
         </div>
       </div>
 
       <div class="results col-sm-6">
-        <div class="artist" ng-repeat="artist in displayArtists.right">
-          {{artist.match | number:2}} {{artist.name}}
-          <img width="100px" height="100px" ng-src={{artist.image[2]['#text']}}>
+        <div class="artist col-sm-6" ng-repeat="artist in displayArtists.right">
+          <!--{{artist.match | number:2}}-->
+          <div class="artist-square" width="100px" height="100px" back-img={{artist.image[2]['#text']}}>
+            <div class="artist-name">{{artist.name}}</div>
+          </div>
         </div>
       </div>
 
@@ -65,10 +68,11 @@
         {{artist.match}} {{artist.name}}
       </div> -->
     
-
+    <script src="lib/underscore/underscore.js"></script>
     <script src="lib/angular/angular.js"></script>
     <script src="./app.js"></script>
     <script src="./utils.js"></script>
+    <script src="lib/underscore/underscore.js"></script>
   </body>
 
 </html>

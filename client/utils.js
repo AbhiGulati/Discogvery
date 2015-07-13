@@ -25,6 +25,17 @@ angular.module('music.services', [])
   };
 })
 
-.factory('CompareLists', function($http) {
-  
+.factory('CompareLists', function() {
+  var intersection = function(arr1, arr2) {
+    var res = [];
+    arr2Names = _.pluck(arr2, 'name');
+    return _.filter(arr1, function(artistObj) {
+      return _.contains(arr2Names, artistObj.name);
+    });
+  }
+
+  return {
+    artistIntersection : intersection
+  }
+
 })

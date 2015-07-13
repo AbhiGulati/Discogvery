@@ -23,3 +23,13 @@ div[back-img]{
     width: 100px;
     height: 100px;
 }
+
+.artist-square {
+  margin-bottom: 10px;
+}
+
+.artist-name {
+  position: absolute;
+  bottom: 8px;
+  background-color: #ddd;
+}

@@ -41,3 +41,7 @@ div[back-img]{
   bottom: 8px;
   background-color: #ddd;
 }
+
+.results {
+  margin: 0 auto;
+}

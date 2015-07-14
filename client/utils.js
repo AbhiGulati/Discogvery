@@ -5,17 +5,19 @@ angular.module('music.services', [])
     return $http({
       method: 'GET',
       url: 'http://ws.audioscrobbler.com/2.0/?method='
-       + 'artist.search&artist=' + artistName + 
-       '&api_key=9a542383b477d237de93ea727034cb5e'
+       + 'artist.search&artist=' + artistName
+       + (length ? '&length=' + length : '')
+       + '&api_key=9a542383b477d237de93ea727034cb5e'
     });
   }
 
-  var getSimilar  = function (artistName) {
+  var getSimilar  = function (artistName, length) {
     return $http({
       method: 'GET',
       url: 'http://ws.audioscrobbler.com/2.0/?method='
-       + 'artist.getsimilar&artist=' + artistName + 
-       '&api_key=9a542383b477d237de93ea727034cb5e&format=json'
+       + 'artist.getsimilar&artist=' + artistName
+       + (length ? '&limit=' + length : '')
+       + '&api_key=9a542383b477d237de93ea727034cb5e&format=json'
     });
   }
 

@@ -16,22 +16,24 @@
     </header>
 
     <div class="container search" ng-controller="search">
-      <form class="form-inline">
-        <div class="form-group col-sm-6">
-          <label for="artist1">First Artist</label>
-          <input type="text" class="form-control" id="artist1" ng-model="artist1" placeholder="Radiohead">
-        </div>
-        <div class="form-group col-sm-6">
-          <label for="artist2">Second Artist</label>
-          <input type="text" class="form-control" id="artist2" ng-model="artist2" placeholder="The Beatles">
-        </div>
-      </form>
-      <button ng-click="getSimilarBoth()">Submit</button>
+      <div class="search-bar">
+        <form class="form-inline">
+          <div class="form-group col-sm-5">
+            <label for="artist1">First Artist</label>
+            <input type="text" class="form-control" id="artist1" ng-model="artist1" placeholder="Radiohead">
+          </div>
+          <div class="form-group col-sm-5">
+            <label for="artist2">Second Artist</label>
+            <input type="text" class="form-control" id="artist2" ng-model="artist2" placeholder="The Beatles">
+          </div>
+        </form>
+          <button ng-click="getSimilarBoth()">Submit</button>
+      </div>
     
       <div class="results col-sm-6">
         <div class="artist col-sm-6" ng-repeat="artist in displayArtists.left">
           <!--{{artist.match | number:2}}-->
-          <div class="artist-square" width="100px" height="100px" back-img={{artist.image[2]['#text']}}>
+          <div class="artist-square" width="120px" height="120px" back-img={{artist.image[2]['#text']}}>
             <div class="artist-name">{{artist.name}}</div>
           </div>
         </div>
@@ -47,26 +49,6 @@
       </div>
 
     </div>
-    <!--
-      <span class="side" id="left">
-        <span><input type='text' ng-model='artist1' placeholder='Pick an Artist!' /></span>
-        <button ng-click="getSimilar(artist1,'left')">Get Similar Artists</button>
-        <div class="artist" ng-repeat="artist in similarArtists.left">
-          {{artist.match.toPrecision(3)}} {{artist.name}}
-        </div>
-      </span>
-      
-      <span class="side" id="right">
-        <span><input type='text' ng-model='artist2' placeholder='Pick an Artist!' /></span>
-        <button ng-click="getSimilar(artist2,'right')">Get Similar Artists</button>
-        <div class="artist" ng-repeat="artist in similarArtists.right">
-          {{artist.match.toPrecision(3)}} {{artist.name}}
-        </div>
-      </span>
-
-      <div class="artist" ng-repeat="artist in commonArtists">
-        {{artist.match}} {{artist.name}}
-      </div> -->
     
     <script src="lib/underscore/underscore.js"></script>
     <script src="lib/angular/angular.js"></script>

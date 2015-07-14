@@ -30,16 +30,15 @@
           <button ng-click="getSimilarBoth()">Submit</button>
       </div>
 
-      <div class="col-sm-3"></div>    
-      <div class="results col-sm-6">
-        <div class="artist col-sm-6" ng-repeat="artist in commonArtists">
-          <!--{{artist.match | number:2}}-->
+   
+      <div class="results">
+        <div class="artist col-sm-3" ng-repeat="artist in commonArtists">
           <div class="artist-square" width="100px" height="100px" back-img={{artist.image[2]['#text']}}>
             <div class="artist-name">{{artist.name}}</div>
           </div>
         </div>
       </div>
-      <div class="col-sm-3"></div>
+
 
     </div>
     
